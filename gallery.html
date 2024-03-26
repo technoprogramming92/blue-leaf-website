@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>BlueLeaf | Contact US</title>
+    <title>BlueLeaf | Gallery</title>
     <!-- Stylesheets -->
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
@@ -10,20 +10,47 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/responsive.css" rel="stylesheet" />
     <!--[if lt IE 9
       ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
     ><![endif]-->
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
     <style>
-      .map-container {
-        width: 100%; /* or a specific width like 600px */
-        height: 450px; /* adjust as needed */
-        overflow: hidden; /* Prevents content from spilling outside the container */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .gallery-item {
+        margin: 5px;
+        overflow: hidden;
+        position: relative;
+        width: calc(33.333% - 10px);
+        cursor: pointer;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 600px) {
+        .gallery-item {
+          width: calc(50% - 10px);
+        }
+      }
+
+      @media (max-width: 400px) {
+        .gallery-item {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -42,7 +69,7 @@
               <!--Logo Box-->
               <div class="logo-box">
                 <div class="logo">
-                  <a href="index.html"
+                  <a href="index-2.html"
                     ><img src="images/blue-leaf-logo.jpeg" alt=""
                   /></a>
                 </div>
@@ -71,10 +98,10 @@
                       <li>
                         <a href="index.html">Home</a>
                       </li>
-                      <li><a href="gallery.html">Gallery</a></li>
                       <li class="current">
-                        <a href="contact.html">Contact</a>
+                        <a href="gallery.html">Gallery</a>
                       </li>
+                      <li><a href="contact.html">Contact</a></li>
                     </ul>
                   </div>
                 </nav>
@@ -89,8 +116,6 @@
                 </button>
               </div>
               <!-- / Hidden Nav Toggler -->
-
-              <!--Search Btn-->
             </div>
           </div>
         </div>
@@ -107,7 +132,7 @@
         <div class="hidden-bar-wrapper">
           <!-- .logo -->
           <div class="logo text-center">
-            <a href="index-2.html"><img src="images/log-sqr.jpeg" alt="" /></a>
+            <a href="index.html"><img src="images/log-sqr.jpeg" alt="" /></a>
           </div>
           <!-- /.logo -->
 
@@ -115,13 +140,13 @@
           <div class="side-menu">
             <!-- .navigation -->
             <ul class="navigation">
-              <li>
+              <li class="current">
                 <a href="index.html">Home</a>
               </li>
               <li>
                 <a href="#">Gallery</a>
               </li>
-              <li class="current"><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <!-- /.Side-menu -->
@@ -129,26 +154,16 @@
           <div class="social-icons">
             <ul>
               <li>
-                <a
-                  target="_blank"
-                  href="https://www.facebook.com/p/Blue-Leaf-Yoga-Studio-100064010971742/"
-                  ><i class="fa fa-facebook"></i
-                ></a>
-              </li>
-
-              <li>
-                <a
-                  target="_blank"
-                  href="https://www.google.com/search?client=ms-android-rogers-ca-revc&sca_esv=a921428cb73996e2&hl=en-IN&cs=1&sxsrf=ACQVn08qtk6uxLzD1foblrJ6U5-FiASW-w:1711447941971&q=Blue+Leaf+Yog+Studio&ludocid=11911025079159587999&lsig=AB86z5X1Qo1YBOsPzj0-qiEGt5Sx&kgs=df3cd0318cd47f95&shndl=-1&shem=lcsnce,lnolc,lsp&source=sh/x/loc/act/m1/4"
-                  ><i class="fa fa-google-plus"></i
-                ></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
               </li>
               <li>
-                <a
-                  target="_blank"
-                  href="https://www.instagram.com/blueleafyogastudio/?igsh=dHgzdWtrM2RsM2Uz"
-                  ><i class="fa fa-instagram"></i
-                ></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
               </li>
             </ul>
           </div>
@@ -166,152 +181,62 @@
         ></div>
 
         <div class="auto-container">
-          <h2>Get In Touch</h2>
+          <h2>Gallery</h2>
           <ul class="bread-crumb clearfix">
-            <li><a href="index-2.html">Home</a></li>
-            <li class="active">Contact Us</li>
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Gallery</li>
           </ul>
         </div>
       </section>
 
-      <!--Contact Information Section-->
-      <section class="contact-information">
-        <div class="auto-container one-column-offset">
-          <div class="row clearfix">
-            <!--Map Column-->
-            <div class="map-column col-md-4 col-sm-4 col-xs-12">
-              <!--Map Container-->
-              <div
-                class="map-container wow fadeInLeft"
-                data-wow-duration="1500ms"
-                data-wow-delay="0ms"
-              >
-                <!--Map Canvas-->
-                <div class="map-container">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14691.39247463843!2d72.5423451!3d22.9926119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85140d12a6df%3A0xa54c7633c213849f!2sBlue%20Leaf%20Yog%20Studio!5e0!3m2!1sen!2sin!4v1711458454259!5m2!1sen!2sin"
-                    width="600"
-                    height="450"
-                    style="border: 0"
-                    allowfullscreen=""
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-
-            <!--Content Column-->
-            <div class="content-column col-md-8 col-sm-6 col-xs-12">
-              <div class="big-text">Contact<br />Us</div>
-              <!--Section Title-->
-              <div class="sec-title">
-                <h3 class="styled-font">Contact details</h3>
-                <h2>Get in touch with us</h2>
-              </div>
-
-              <!--Info -->
-              <div class="row clearfix">
-                <!--Info Block-->
-                <div class="info-block col-lg-6 col-sm-12 col-xs-12">
-                  <div class="inner-box">
-                    <div class="icon-box">
-                      <span class="flaticon-telephone"></span>
-                    </div>
-                    <h4>Phone</h4>
-                    <ul>
-                      <li>Mobile: +91 9714566488</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!--Info Block-->
-                <div class="info-block col-lg-6 col-sm-12 col-xs-12">
-                  <div class="inner-box">
-                    <div class="icon-box">
-                      <span class="flaticon-location"></span>
-                    </div>
-                    <h4>Address</h4>
-                    <ul>
-                      <li>
-                        101, Swaminarayan Park 4, Vaishali Township behind GB
-                        shah college, Vasna, Ahmedabad, Gujarat 380007
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!--Info Block-->
-                <div class="info-block col-lg-6 col-sm-12 col-xs-12">
-                  <div class="inner-box">
-                    <div class="icon-box">
-                      <span class="flaticon-multimedia-3"></span>
-                    </div>
-                    <h4>Email</h4>
-                    <ul>
-                      <li>blueleafyogastudio@gmail.com</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!--Team Section-->
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/gallery-page/1.jpg" alt="Image 1" />
         </div>
-      </section>
-
-      <!--Contact Section-->
-      <section class="contact-section">
-        <div class="auto-container one-column-offset">
-          <div class="form-outer default-form">
-            <form
-              method="post"
-              action="https://html.tonatheme.com/2020/leezen/sendemail.php"
-              id="contact-form"
-            >
-              <div class="row clearfix">
-                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                  <div class="field-label">Your Name <sup>*</sup></div>
-                  <input
-                    type="text"
-                    name="username"
-                    value=""
-                    placeholder="Your Name"
-                  />
-                </div>
-
-                <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                  <div class="field-label">Your Email <sup>*</sup></div>
-                  <input
-                    type="email"
-                    name="email"
-                    value=""
-                    placeholder="Your Email"
-                  />
-                </div>
-
-                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                  <div class="field-label">Subject</div>
-                  <input
-                    type="text"
-                    name="subject"
-                    value=""
-                    placeholder="Subject"
-                  />
-                </div>
-
-                <div class="form-group col-lg-12 col-sm-12 col-xs-12">
-                  <div class="field-label">Message</div>
-                  <textarea name="message" placeholder="Message"></textarea>
-                </div>
-              </div>
-              <div class="text-center padd-top-20">
-                <button type="submit" class="theme-btn btn-style-two">
-                  SEND US
-                </button>
-              </div>
-            </form>
-          </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/2.jpg" alt="Image 2" />
         </div>
-      </section>
+        <div class="gallery-item">
+          <img src="images/gallery-page/3.jpg" alt="Image 3" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/4.jpg" alt="Image 4" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/5.jpg" alt="Image 5" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/6.jpg" alt="Image 6" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/7.jpg" alt="Image 7" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/8.jpg" alt="Image 8" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/9.jpg" alt="Image 9" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/10.jpg" alt="Image 10" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/11.jpg" alt="Image 11" />
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/gallery-page/13.jpg" alt="Image 13" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/14.jpg" alt="Image 14" />
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-page/15.jpg" alt="Image 15" />
+        </div>
+
+        <!-- Add more images as needed -->
+      </div>
 
       <!--Main Footer-->
       <footer class="main-footer">
@@ -435,14 +360,63 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/jquery.fancybox.pack.js"></script>
-    <script src="js/jquery.fancybox-media.js"></script>
-    <script src="js/map-script.js"></script>
-    <script src="js/validate.js"></script>
-    <script src="js/owl.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/script.js"></script>
-  </body>
 
-  <!-- Mirrored from html.tonatheme.com/2020/leezen/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Feb 2024 07:36:24 GMT -->
+    <script src="js/script.js"></script>
+    <script>
+      var gallery = document.querySelector("#gallery");
+      var getVal = function (elem, style) {
+        return parseInt(window.getComputedStyle(elem).getPropertyValue(style));
+      };
+      var getHeight = function (item) {
+        return item.querySelector(".content").getBoundingClientRect().height;
+      };
+      var resizeAll = function () {
+        var altura = getVal(gallery, "grid-auto-rows");
+        var gap = getVal(gallery, "grid-row-gap");
+        gallery.querySelectorAll(".gallery-item").forEach(function (item) {
+          var el = item;
+          el.style.gridRowEnd =
+            "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+        });
+      };
+      gallery.querySelectorAll("img").forEach(function (item) {
+        item.classList.add("byebye");
+        if (item.complete) {
+          console.log(item.src);
+        } else {
+          item.addEventListener("load", function () {
+            var altura = getVal(gallery, "grid-auto-rows");
+            var gap = getVal(gallery, "grid-row-gap");
+            var gitem = item.parentElement.parentElement;
+            gitem.style.gridRowEnd =
+              "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+            item.classList.remove("byebye");
+          });
+        }
+      });
+      window.addEventListener("resize", resizeAll);
+      gallery.querySelectorAll(".gallery-item").forEach(function (item) {
+        item.addEventListener("click", function () {
+          item.classList.toggle("full");
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".gallery img");
+
+        images.forEach((img) => {
+          img.style.opacity = "0.8";
+
+          img.addEventListener("mouseover", () => {
+            img.style.opacity = "1";
+          });
+
+          img.addEventListener("mouseout", () => {
+            img.style.opacity = "0.8";
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
