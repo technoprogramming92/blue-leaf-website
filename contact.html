@@ -264,11 +264,7 @@
       <section class="contact-section">
         <div class="auto-container one-column-offset">
           <div class="form-outer default-form">
-            <form
-              method="post"
-              action="https://script.google.com/macros/s/AKfycbz-TQH-vf73u02ADucR5gM-88NHRAJ7VLXLDYd4wHGWB68fcNoK3eyr8gdqBxJCwYYv/exec"
-              id="contact-form"
-            >
+            <form id="contact-form">
               <div class="row clearfix">
                 <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                   <div class="field-label">Your Name <sup>*</sup></div>
@@ -287,6 +283,16 @@
                     name="Email"
                     value=""
                     placeholder="Your Email"
+                  />
+                </div>
+
+                <div class="form-group col-lg-12 col-sm-12 col-xs-12">
+                  <div class="field-label">Your Phone Number<sup>*</sup></div>
+                  <input
+                    type="text"
+                    name="Phone"
+                    value=""
+                    placeholder="Your Phone"
                   />
                 </div>
 
@@ -423,6 +429,41 @@
     <div class="scroll-to-top scroll-to-target" data-target=".main-header">
       <span class="fa fa-long-arrow-up"></span>
     </div>
+
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault(); // Stop the regular form submission
+
+          var form = e.target;
+          var formData = new FormData(form);
+
+          // Adjust the URL to your Google Script URL
+          fetch(
+            "https://script.google.com/macros/s/AKfycbz-TQH-vf73u02ADucR5gM-88NHRAJ7VLXLDYd4wHGWB68fcNoK3eyr8gdqBxJCwYYv/exec",
+            {
+              method: "POST",
+              body: formData,
+            }
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Success:", data);
+              if (data.result === "success") {
+                form.reset();
+                // Refresh the page or redirect as needed
+                window.location.reload(); // This line refreshes the page
+              } else {
+                // Handle any errors or different outcomes you might have
+                alert("There was an error submitting the form.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+    </script>
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
